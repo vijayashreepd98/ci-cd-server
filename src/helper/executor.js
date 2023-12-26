@@ -11,7 +11,6 @@ class BaseExecutor {
         console.log(__dirname)
         console.log(baseMethodsPath)
         const methodPath = this.getMethodPath(requestData.path);
-        const { lng_key: lngKey, access_token: accessToken, enc_state: encState } = requestData.headers;
 
         console.log(methodPath)
         try {
@@ -32,7 +31,14 @@ class BaseExecutor {
                 return actionInstance[param] = reqParams[methodParams[param].name]
             });
 
-            actionInstance['access_token'] = accessToken;
+            if (requestData.headers) {
+                console.log("its true ",)
+                console.log(requestData.headers)
+                const { access_token: accessToken } = requestData.headers;
+
+
+                actionInstance['access_token'] = accessToken;
+            }
 
             console.log("action instance")
             console.log(actionInstance)
