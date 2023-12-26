@@ -1,14 +1,18 @@
-const { userLoginHandler, getUserList } = require("../../library/sqlLib/user.lib")
+// const { userLoginHandler, getUserList } = require("../../library/sqlLib/user.lib")
 
 class UserListAction {
 
     async executor() {
         try {
-            const {userId } = this;
+            const { userId } = this;
 
             console.log(userId)
-            const user = await getUserList({ status: 1 });
+            // const user = await getUserList({ status: 1 });
 
+            const user = [{
+                name: "vijayas",
+                id: 1
+            }]
             console.log("user list")
             console.log(user)
             if (user) {

@@ -18,7 +18,7 @@ class UserRegisterAction {
                 }
             }
             const user = await userRegistrationHandler({ user_name: userName, password: password });
-            
+
             if (user) {
                 return {
                     RESPONSE_CODE: 10000,

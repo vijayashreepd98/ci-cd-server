@@ -1,4 +1,4 @@
-const { userLoginHandler } = require("../../library/sqlLib/user.lib")
+// const { userLoginHandler } = require("../../library/sqlLib/user.lib")
 
 class UserLoginAction {
 
@@ -23,20 +23,20 @@ console.log("access token")
                     RESPONSE_MESSAGE: "PASSWORD MANDATORY"
                 }
             }
-            const user = await userLoginHandler({ user_name: userName, password: password });
+            // const user = await userLoginHandler({ user_name: userName, password: password });
 
-            console.log("user data")
-            console.log(user)
-            if (user) {
+            // console.log("user data")
+            // console.log(user)
+            // if (user) {
                 return {
                     RESPONSE_CODE: 10000,
                     RESPONSE_MESSAGE: "SUCCESS"
                 }
-            }
-            return {
-                RESPONSE_CODE: 11100,
-                RESPONSE_MESSAGE: "SOMETHING_WENT_WRONG"
-            }
+            // }
+            // return {
+            //     RESPONSE_CODE: 11100,
+            //     RESPONSE_MESSAGE: "SOMETHING_WENT_WRONG"
+            // }
         } catch (e) {
             console.log("error")
             console.log(e)
